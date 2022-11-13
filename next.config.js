@@ -1,6 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-}
+  images: {
+    // which domains you accept images from
+    domains: ["links.papareact.com"]
+  },
+  reactStrictMode: true
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
