@@ -4,7 +4,7 @@ const MediumCard = ({ img, title }) => {
   return (
     <article className="cursor-pointer hover:scale-105 transform transition duration-250 ease-out">
       <div className="relative h-80 w-80">
-        <Image src={img} layout="fill" className="rounded-xl" />
+        <Image src={img} alt={title} layout="fill" className="rounded-xl" />
       </div>
       <h1 className="text-xl font-semibold mt-3">{title}</h1>
     </article>
