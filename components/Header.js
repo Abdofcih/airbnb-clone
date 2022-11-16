@@ -19,7 +19,7 @@ const Header = ({ placeholder }) => {
     startDate: new Date(),
     endDate: new Date()
   });
-  const [numOfGuests, setNumOfGuests] = useState(0);
+  const [numOfGuests, setNumOfGuests] = useState(1);
   const router = useRouter();
   const selectionRange = {
     ...dateRange,
@@ -99,6 +99,7 @@ const Header = ({ placeholder }) => {
               value={numOfGuests}
               onChange={e => setNumOfGuests(parseInt(e.target.value))}
               id=""
+              min={1}
             />
           </div>
           <div className="flex mt-3">

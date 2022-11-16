@@ -2,6 +2,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useRouter } from "next/router";
 import { format } from "date-fns";
+import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 const Search = ({ searchResult }) => {
   const router = useRouter();
   const { location, numOfGuests, startDate, endDate } = router.query;
@@ -25,9 +27,11 @@ const Search = ({ searchResult }) => {
             <p className="button">Price</p>
             <p></p>
           </div>
-          {searchResult?.map((item, i) => <h1 key={i}>{item.title}</h1>)}
+          {searchResult?.map((item, i) => <InfoCard key={i} {...item} />)}
         </section>
-        <section></section>
+        <section className="hidden lg:inline-flex xl:min-w-[600px]">
+          <Map searchResult={searchResult} />
+        </section>
       </main>
       <Footer />
     </div>
